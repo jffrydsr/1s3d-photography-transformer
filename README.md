@@ -1,52 +1,49 @@
-# [SIGGRAPH 2020] One Shot 3D Photography
+# Flask App Template
 
-This is the code for the ``Tiefenrausch'' depth estimation method, described in our paper
-**One Shot 3D Photography**
-in SIGGRAPH 2020.
+**An complete Flask application template, with useful plugins.**
 
-It reproduces the row in Table 1 labeled "Tiefenrausch (AS + quant)", and can be used for evaluation.
+Use this Flask app to initiate your project with less work. In this application  template you will find the following plugins already configured:
 
-To achieve better quality, i.e., as in the version we use in the Facebook App, it needs to be trained with a more varied dataset such as in the last row in Table 1.
+* **Flask-Login** - Flask-Login provides user session management for Flask.
+* **Flask-Bootstrap** - Ready-to-use Twitter-bootstrap for use in Flask.
+* **Flask-Uploads** - Flask-Uploads allows your application to flexibly and efficiently handle file uploading and serving the uploaded files.
+* **Flask-Cache** - Adds cache support to your Flask application.
+* **Flask-Admin** - Flask extension module that provides an admin interface
+* **Flask-Flatpages** - Provides flat static pages to a Flask application, based on text files as opposed to a relational database.
+* **Flask-Gravatar** - Small extension for Flask to make using Gravatar easy.
+* **Flask-Mail** - Makes sending mails from Flask applications very easy and has also support for unittesting.
+* **Flask-Restless** - Flask-Restless provides simple generation of ReSTful APIs for database models defined using Flask-SQLAlchemy.
+* **Flask-SQLAlchemy** - Adds SQLAlchemy support to Flask. Quick and easy.
+* **Flask-PyMongo** - Add PyMongo Support MongoDB.
+* **Flask-Themes** - Flask-Themes makes it easy for your application to support a wide range of appearances.
+* **Flask-WTF** - Flask-Themes makes it easy for your application to support a wide range of appearances.
 
-This method produces depth maps only. If you want to create 3D photos, you can use the Facebook app, or if you're looking for an OSS implementation, you can use this code https://github.com/vt-vl-lab/3d-photo-inpainting
+## Requirements
 
-Please find more details on our project page:
-https://facebookresearch.github.io/one_shot_3d_photography/
+gcc, make, Python 2.5+, python-pip, virtualenv
 
-## Prerequisites:
+## Instalation
 
-```
-conda create -yn one_shot python=3.7
-conda activate one_shot
-conda install --file requirements.txt -c conda-forge -c pytorch
-```
+First, clone this repository.
 
-## Process a single image
+    $ git clone http://github.com/berlotto/flask-app-template
+    $ cd flask-app-template
 
-```
-python cli.py --src_file ./input/pumpkin.jpg --out_file ./output/pumpkin.npy --vis_file ./output/pumpkin.png
-```
+Create a virtualenv, and activate this: 
 
-## Process a directory
+    $ virtualenv env 
+    $ source env/bin/activate
 
-```
-python cli.py --src_dir ./input/ --out_dir ./output/ --vis_dir ./output/
-```
+After, install all necessary to run:
 
-## Citation
+    $ pip install -r requirements.txt
 
-If you use our code, consider citing our paper:
-```
-@article{Kopf-OneShot-2020,
-  author    = {Johannes Kopf and Kevin Matzen and Suhib Alsisan, Ocean Quigley and Francis Ge and Yangming Chong and Josh Patterson and Jan-Michael Frahm and Shu Wu and Matthew Yu and Peizhao Zhang and Zijian He and Peter Vajda and Ayush Saraf and Michael Cohen},
-  title     = {One Shot 3D Photography},
-  booktitle = {ACM Transactions on Graphics (Proceedings of ACM SIGGRAPH)},
-  publisher = {ACM},
-  volume = {39},
-  number = {4},
-  year = {2020}
-}
-```
+Than, run the application:
 
-## License
-This work is licensed under MIT License. See [LICENSE](LICENSE) for details.
+	$ python run.py
+
+To see your application, access this url in your browser: 
+
+	http://localhost:5000
+
+All configuration is in: `configuration.py`
